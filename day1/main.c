@@ -1,18 +1,27 @@
 #include <stdio.h>
+#include <ctype.h>
 
-char* readInput(){
+void readInput(char *pA){
 	FILE *fp;
-	int c;
+    int c;
+	int index = 0;
+	
 
 	fp = fopen("input.txt", "r");
 
-	while((c = fgetc(fp)) != EOF){
-		printf("%c", c);
+	while ((c = fgetc(fp)) != EOF){
+		pA[index] = c;
+		index++;
 	};
 
 	fclose(fp);
 };
 
 void main(void){
-	readInput();
+	char charArray[100000];
+	readInput(charArray);
+	for (int i = 0; i < 3; i++) 
+  		{
+    		printf("%c\n", charArray[i]);
+  		}a
 };
